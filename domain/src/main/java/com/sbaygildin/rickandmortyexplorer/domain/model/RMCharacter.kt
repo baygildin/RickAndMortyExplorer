@@ -1,7 +1,8 @@
 package com.sbaygildin.rickandmortyexplorer.domain.model
 
 data class CharacterResponse(
-    val results: List<RMCharacter>
+    val results: List<RMCharacter>,
+    val nextPage: String?,
 )
 
 data class RMCharacter(

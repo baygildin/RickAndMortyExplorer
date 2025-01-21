@@ -36,6 +36,7 @@ fun CharacterDto.toDomain(): RMCharacter {
 }
 fun CharacterResponseDto.toDomain(): CharacterResponse {
     return CharacterResponse(
-        results = results.map { it.toDomain() }
+        results = results.map { it.toDomain() },
+        nextPage = info.next
     )
 }
