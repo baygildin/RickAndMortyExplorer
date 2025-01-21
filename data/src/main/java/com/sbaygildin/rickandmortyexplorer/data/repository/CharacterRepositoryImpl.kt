@@ -6,8 +6,17 @@ import com.sbaygildin.rickandmortyexplorer.domain.model.RMCharacter
 import com.sbaygildin.rickandmortyexplorer.domain.repository.CharacterRepository
 
 class CharacterRepositoryImpl(private val api: CharacterApi) : CharacterRepository {
+    private var nextPageUrl: String? = null
+
     override suspend fun getCharacters(page: Int): List<RMCharacter> {
-        return api.getCharacters(page).results.map { it.toDomain() }
+        val response = api.getCharacters(page)
+        nextPageUrl = response.info.next
+        return response.results.map { it.toDomain() }
+
+    }
+
+    override suspend fun getCharacterById(id: Int): RMCharacter {
+        return api.getCharacterById(id).toDomain()
 
     }
 }

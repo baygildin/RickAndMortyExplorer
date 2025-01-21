@@ -2,19 +2,17 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.hilt.android)
-    id("kotlin-kapt")
 }
 
 android {
-    namespace = "com.sbaygildin.rickandmortyexplorer.feature"
+    namespace = "com.sbaygildin.rickandmortyexplorer.core"
     compileSdk = 35
 
     defaultConfig {
         minSdk = 27
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -33,39 +31,17 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-    buildFeatures {
-        compose = true
-    }
-    hilt {
-        enableAggregatingTask = false
-    }
 
 }
 
 dependencies {
+
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.material3)
-    implementation(libs.androidx.ui.tooling.preview.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
-    implementation(libs.hilt.navigation.compose)
-    implementation(libs.coil.compose)
-    implementation(libs.coil.network.okhttp)
-    debugImplementation("androidx.compose.ui:ui-tooling:1.6.1")
-
-
-    implementation(project(":data"))
-    implementation(project(":domain"))
-    implementation(project(":core"))
-
-
-}
-kapt {
-    correctErrorTypes = true
 }
