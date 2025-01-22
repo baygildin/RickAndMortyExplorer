@@ -17,7 +17,7 @@ data class CharacterDto(
 
 data class LocationDto(
     val name: String,
-    val url: String
+    val url: String,
 )
 
 fun CharacterDto.toDomain(): RMCharacter {
@@ -29,11 +29,12 @@ fun CharacterDto.toDomain(): RMCharacter {
         type = type,
         gender = gender,
         image = image,
-        episode= episode,
+        episode = episode,
         locationName = location.name,
         locationUrl = location.url
     )
 }
+
 fun CharacterResponseDto.toDomain(): CharacterResponse {
     return CharacterResponse(
         results = results.map { it.toDomain() },

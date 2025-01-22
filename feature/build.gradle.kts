@@ -39,7 +39,6 @@ android {
     hilt {
         enableAggregatingTask = false
     }
-
 }
 
 dependencies {
@@ -51,20 +50,21 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
     implementation(libs.coil.compose)
     implementation(libs.coil.network.okhttp)
-    debugImplementation("androidx.compose.ui:ui-tooling:1.6.1")
-
-
+    implementation(libs.paging.common)
+    implementation(libs.paging.compose)
     implementation(project(":data"))
     implementation(project(":domain"))
     implementation(project(":core"))
 
-
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.3.3")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
 kapt {
     correctErrorTypes = true

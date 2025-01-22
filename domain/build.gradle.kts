@@ -34,6 +34,7 @@ android {
 
 dependencies {
 
-
+    implementation(libs.paging.common)
+    implementation(libs.paging.compose)
 
 }
