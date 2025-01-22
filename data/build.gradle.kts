@@ -48,11 +48,12 @@ dependencies {
     implementation(libs.hilt.navigation.compose)
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
-    implementation(project(":domain"))
-
+    implementation(libs.paging.common)
+    implementation(libs.paging.compose)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(project(":domain"))
 }
 kapt {
     correctErrorTypes = true

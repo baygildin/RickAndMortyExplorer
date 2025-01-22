@@ -1,6 +1,5 @@
 package com.sbaygildin.rickandmortyexplorer.feature.character
 
-
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -31,7 +30,6 @@ import com.sbaygildin.rickandmortyexplorer.core.ui.SFUIText
 import com.sbaygildin.rickandmortyexplorer.domain.model.RMCharacter
 import com.sbaygildin.rickandmortyexplorer.feature.R
 
-
 @Composable
 fun CharacterItem(character: RMCharacter, onClick: () -> Unit) {
 
@@ -58,7 +56,6 @@ fun CharacterItem(character: RMCharacter, onClick: () -> Unit) {
         }
 
         Column(modifier = Modifier.padding(start = 8.dp)) {
-
 
             Row(
                 modifier = Modifier.fillMaxWidth(),

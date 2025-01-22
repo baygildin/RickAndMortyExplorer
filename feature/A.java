@@ -1,1 +1,0 @@
-painterResource(R.drawable.error)

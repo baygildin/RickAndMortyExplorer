@@ -15,5 +15,5 @@ data class RMCharacter(
     val image: String,
     val episode: List<String>,
     val locationName: String,
-    val locationUrl: String
+    val locationUrl: String,
 )
